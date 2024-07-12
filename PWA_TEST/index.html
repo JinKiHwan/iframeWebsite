@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="manifest" href="manifest.json" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/images/android-chrome-512x512.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico" />
+
+        <style>
+            .container {
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>헬로</h1>
+            <img src="../images/android-chrome-512x512.png" alt="" />
+            <p>by Javascript</p>
+        </div>
+
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('./service_worker.js').then(function () {
+                    console.log('서비스 워커 등록 완료');
+                });
+            }
+        </script>
+    </body>
+</html>
